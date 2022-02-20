@@ -8,10 +8,15 @@ contract HelloWorld{
     uint myFavNumber; // A state variable
 
     /// @param _number The number to assign myFavNumber
+    //@notice modifies the state variable myFavNumber
     constructor(uint _number){
-        myFavNumber = _number; //@notice modifies the state variable myFavNumber
+        changeFavNumber(_number); 
     }
-
+    
+    //@notice modifies the state variable myFavNumber
+    function changeFavNumber(uint _number) public{
+        myFavNumber = _number; 
+    }
     /// @return myFavNumber 
     function getFavNumber() view public returns(uint){
         return myFavNumber;
